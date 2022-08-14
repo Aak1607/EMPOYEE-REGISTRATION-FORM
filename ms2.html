@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        color: rgb(74, 27, 11);
+    }
+
+    fieldset{
+        text-align: center;
+        width: 700px;
+        height: 300px;
+        margin-left: 29%;
+    }
+
+    button{
+        color: blueviolet;
+
+    }
+    form{
+        border: 2px solid rgb(192, 32, 32);
+        padding: 20px;
+        margin: auto;
+        margin: 0%;
+        border-radius: 20px;
+        border-style: double;
+        text-align: center;   
+    }
+</style>
+
+
+<body bgcolor="skyblue">
+
+    <form action="" name="form1" onsubmit="return validation()">
+        <h1>EMPOYEE REGISTRATION FORM!!!</h1>
+
+        <!-- <fieldset > -->
+            <label>
+                <strong>Employee Name:</strong>
+                <input type="text" size="10" id="name" name="name" placeholder="Enter Name..">
+            </label><br><br>
+
+            <strong>GENDER: </strong> <br>
+            <input type="radio" name="drone" value="Male" id="male" name="Gender" required>
+            <label for="MALE">MALE</label> <br>
+            <input type="radio" name="drone" value="FEMALE" id="female" name="Gender">
+            <label for="FEMALE">FEMALE</label><br>
+            <input type="radio" name="drone" value="Other" id="Other" name="Gender">
+            <label for="OTHER">OTHER</label><br><br>
+            <strong>HOBBIES: </strong>
+
+            <input type="checkbox" name="hobbies"> Swimming
+            <input type="checkbox" name="hobbies"> Playing
+            <input type="checkbox" name="hobbies"> Reading
+            <input type="checkbox" name="hobbies"> Yoga
+            <input type="checkbox" name="hobbies"> Cooking <br> <br>
+
+
+         <input type="submit" value="submit" id="button">
+         
+
+        <!-- </fieldset> -->
+    </form>
+
+    <script>
+        function validation() {
+           var name=document.forms["form1"]["name"].value;
+           var hobbies=document.form1.hobbies;
+           var Gender=document.form1.Gender;
+           var count=0;
+           var c=0;
+           if(name.length<4 || name.length>16){
+            alert("Please Type Your Name Between 4 To 16 Character")
+           }
+           for(i=0;i<hobbies.length;i++){
+            if(hobbies[i].checked==true){
+                count++;
+            }
+           }
+           if(count<2){
+            alert("Please Select Atleast Two Checkbox");
+            return false;
+           }
+           if(name.charAt(0)!=name.charAt(0).toUpperCase()){
+            alert("First Character Should Be Uppercase")
+            return false;
+           }
+          
+            
+     
+            
+        }
+    </script>
+
+
+</body>
+
+</html>
